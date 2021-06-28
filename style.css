@@ -1,0 +1,44 @@
+body {
+    background-color:rgb(72, 134, 158);
+    display: flex;
+}
+
+.container {
+    position: relative;
+    margin-left: 40%;
+}
+
+.header {
+    color: white;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+main {
+    justify-self: center;
+    text-align: center;
+}
+
+.question {
+    color: white;
+    font-size: 25px;
+    margin: 20px;
+}
+
+button {
+    display: block;
+    height: 35px;
+    font-weight: bold;
+    color: black;
+    background-color: lightyellow;
+    border: 2px solid rgb(172, 172, 46);
+    margin: 16px 16px 16px 20px;
+    cursor: pointer;
+}
+
+button:hover{
+	background-color: rgb(255, 255, 134);
+}
