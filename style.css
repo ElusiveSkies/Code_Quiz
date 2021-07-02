@@ -20,6 +20,7 @@ h1 {
 main {
     justify-self: center;
     text-align: center;
+    padding: 10px;
 }
 
 .question {
@@ -33,12 +34,26 @@ button {
     height: 35px;
     font-weight: bold;
     color: black;
-    background-color: lightyellow;
-    border: 2px solid rgb(172, 172, 46);
+    background-color: rgb(223, 186, 118);
+    border: 2px solid rgb(189, 188, 188);
+    border-radius: 8px;
     margin: 16px 16px 16px 20px;
     cursor: pointer;
 }
 
 button:hover{
-	background-color: rgb(255, 255, 134);
+	background-color: rgb(241, 205, 137);
+}
+
+#start {
+    margin-left: 85px;
+    height: 75px;
+    width: 150px;
+    align-self: center;
+    font-size: 50px;
+    margin-bottom: 80%; 
+}
+
+.wrapper {
+    border-bottom: 1px solid white;
 }
