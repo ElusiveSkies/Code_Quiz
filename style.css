@@ -1,6 +1,7 @@
 body {
     background-color:rgb(72, 134, 158);
     display: flex;
+    color: white;
 }
 
 .container {
@@ -29,7 +30,7 @@ main {
     margin: 20px;
 }
 
-button {
+.button {
     display: block;
     height: 35px;
     font-weight: bold;
@@ -51,9 +52,38 @@ button:hover{
     width: 150px;
     align-self: center;
     font-size: 50px;
-    margin-bottom: 80%; 
+    margin-bottom: 60%; 
 }
 
-.wrapper {
+.quiz-container {
     border-bottom: 1px solid white;
+  }
+
+.answer {
+    color: white;
+    font-size: 25px;
+    height: 75px;
+}
+
+.score {
+    color: white;
+    font-size: 25px;
+    height: 75px;
+}
+
+.timer {
+    color: white;
+    font-size: 25px;
+    height: 75px;
+}
+
+#submit {
+    height: 35px;
+    font-weight: bold;
+    color: black;
+    background-color: rgb(223, 186, 118);
+    border: 2px solid rgb(189, 188, 188);
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
 }

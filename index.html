@@ -12,30 +12,62 @@
         <div class ="header"><h1>Javascript Code Quiz!</h1>
         </div>
         <main>
-            <div class="wrapper">
-                <div class = "question">
+            <div class="quiz-container">
+                <div class="slides">
+                    <button id="start" class="button">Start</button>
                 </div>
-                <div class = "choices">
-            <!-- <div class="carouselbox" aria-role="img" aria-label="carousel"></div> -->
-                <button id="start" class="button">Start</button>
-            
-                <!-- <button id="btnA" class="button">Choice A</button>
-            <button id="btnB" class="button">Choice B</button>
-            <button id="btnC" class="button">Choice C</button>
-            <button id="btnD" class="button">Choice D</button> -->
+                <div class="slides">
+                    <div class = "question"> Which one is prettiest?
+                    </div>
+                    <button id="btnA" class="button correct">Choice A</button>
+                    <button id="btnB" class="button incorrect">Choice B</button>
+                    <button id="btnC" class="button incorrect">Choice C</button>
+                    <button id="btnD" class="button incorrect">Choice D</button>
                 </div>
-            <!-- <div>
-                <button class="prev">
-                    ◀ Previous
-                  </button>
-                  <button class="next">
-                    Next ▶ 
-                  </button>
-            </div> -->
-            </div>          
-
+                <div class="slides">
+                    <div class = "question">Why am I struggling so much?
+                    </div>
+                    <button id="btnE" class="button incorrect">E</button>
+                    <button id="btnF" class="button incorrect">F</button>
+                    <button id="btnG" class="button correct">G</button>
+                    <button id="btnH" class="button incorrect">H</button>
+                </div>
+                <div class="slides">
+                    <div class = "question">Is this over yet?
+                    </div>
+                    <button id="btnI" class="button incorrect">I</button>
+                    <button id="btnJ" class="button incorrect">J</button>
+                    <button id="btnK" class="button correct">K</button>
+                    <button id="btnL" class="button incorrect">L</button>
+                </div>
+                <div class="slides" id="end">
+                    <div>
+                        <div class="card">
+                          <h1>High Scores</h1>
+                          <form method="highscore">
+                            <div class="input-group">
+                              <label for="initials">initials</label>
+                              <input type="text" name="initials" id="initials" placeholder="Your Initials" />
+                            </div>
+                            <div id="msg"></div>
+                            <button id="submit">Submit</button>
+                          </form>
+                        </div>
+                        <div class="card">
+                          <h2>High Scores:</h2>
+                          <ul>
+                          <strong></strong><span id="user-initials"></span>
+                          <strong></strong><span id="user-score"></span>
+                          </ul>
+                        </div>
+                      </div>
+                </div>
+            </div>
             <div class = "answer">
-
+            </div>
+            <div class = "score"><span id = "counter">0</span> points
+            </div>
+            <div class = "timer">
             </div>
         </main>
     </div>

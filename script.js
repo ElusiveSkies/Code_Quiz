@@ -1,35 +1,50 @@
-//  Selects carousel element
 var question = document.querySelector(".question");
 var choices = document.querySelector(".choices");
 var begin = document.querySelector("#start");
-score = [];
+var button = document.querySelectorAll(".button");
+var quiz = document.querySelector(".quiz-container");
+var score = document.querySelector(".score");
+var counter = document.querySelector("#counter");
+var answerCorrect = document.querySelectorAll(".correct");
+var ansIncorrect = document.querySelectorAll(".incorrect");
+var choiceButtons = [answerCorrect, ansIncorrect];
+var score = [];
 
-var question1 = ['What is your favorite fruit?'];
-var answers1 = ['Pineapple', 'Banana', 'Apple', 'Peach'];
+score = 0;
 
-function myQuestions() {
-  question.innerHTML = question1;
-};
-
-function printAnswers() {
-    for (var i = 0; i < answers.length; i++) {
-      var button = document.createElement("button");
-      var ans = document.createTextNode(answers[i]);
-      button.appendChild(ans);
-      choices.appendChild(button);
-    }
-};
+var count = localStorage.getItem("score");
+score.textContent = score;
 
 
-begin.addEventListener("click", function(event) {
-    myQuestions();
-    printAnswers();
-    // var element = event.target;
-    begin.parentNode.removeChild(begin);
+// var question = ['What is your favorite fruit?'];
+// var answers = ['Pineapple', 'Banana', 'Apple', 'Peach'];
+
+// function myQuestions() {
+//   question.innerHTML = question;
+// };
+
+// function printAnswers() {
+//   for (var i = 0; i < answers.length; i++) {
+//     var button = document.createElement("button");
+//     var ans = document.createTextNode(answers[i]);
+//     button.appendChild(ans);
+//     choices.appendChild(button);
+//   }
+// };
+
+
+// begin.addEventListener("click", function(event) {
+//     myQuestions();
+//     printAnswers();
+//     // var element = event.target;
+//     begin.parentNode.removeChild(begin);
   
-  });
+//   }); 
 
 
+
+
+  
 
   // In class 3-21, using 0,1,2,3 for
   // question, a, b, c, d
@@ -37,129 +52,134 @@ begin.addEventListener("click", function(event) {
 
 
 
-  // What are we doing here?
-  // str = str.replace(.question, questions);
-
-  // const myQuestions = [
-  //   {
-  //     question: "Who invented JavaScript?",
-  //     answers: {
-  //       a: "Douglas Crockford",
-  //       b: "Sheryl Sandberg",
-  //       c: "Brendan Eich"
-  //     },
-  //     correctAnswer: "c"
-  //   },
-  //   {
-  //     question: "Which one of these is a JavaScript package manager?",
-  //     answers: {
-  //       a: "Node.js",
-  //       b: "TypeScript",
-  //       c: "npm"
-  //     },
-  //     correctAnswer: "c"
-  //   },
-  //   {
-  //     question: "Which tool can you use to ensure code quality?",
-  //     answers: {
-  //       a: "Angular",
-  //       b: "jQuery",
-  //       c: "RequireJS",
-  //       d: "ESLint"
-  //     },
-  //     correctAnswer: "d"
-  //   }
-  // ];
-
+  
  
 
+// Will work, but requires too much on html page
+
+
+// Rename variables, etc
+
+// Displays or hides slides
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+  slides[slideIndex-1].style.display = "block";
+  if(n > slides.length){
+    n= slideIndex =slides.length;
+ }
+}
+
+
+// Clicking on buttons goes to next slide
+for (var i = 0; i < button.length; i++) {
+  button[i].addEventListener("click", function() {
+  plusSlides(1);
+})};
+
+
+
+// Displays Countdown timer
+var timerEl = document.querySelector('.timer');
+
+// Timer that counts down from 30 seconds
+begin.addEventListener("click", function countdown() {
+  var timeLeft = 30;
+
+
+  var timeInterval = setInterval(function () {
+    if (timeLeft > 1) {
+      timerEl.textContent = 'Time remaining ' + timeLeft + ' seconds';
+      timeLeft--;
+    } else if (timeLeft === 1) {
+      timerEl.textContent = 'Time remaining ' + timeLeft + ' seconds';
+      timeLeft--;
+    } else if (timeLeft === 0) {
+      showSlides(4);
+      timerEl.textContent = 'Time is up!';
+      clearInterval(timeInterval);
+    }
+  }, 1000);
+
+for (var i = 0; i < ansIncorrect.length; i++) {
+  ansIncorrect[i].addEventListener("click", function() {
+  timeLeft = timeLeft - 5;
+  timerEl.textContent = 'Time remaining ' + timeLeft + ' seconds';
+})};
+
+for (var i = 0; i < answerCorrect.length; i++) {
+    answerCorrect[i].addEventListener("click", function() {
+    score = Number(score) + 10;
+    counter.textContent = score;
+    localStorage.setItem("score", score);
+  }
+)};
+
+});
 
 
 
 
-// begin.addEventListener("click", function() {
-//     var button = document.createElement("button");
-//     button.textContent = "Complete ✔️";
-//     choices.appendChild(button);
-//     var button = document.createElement("button");
-//     button.textContent = "Complete ✔️";
-//     choices.appendChild(button);
-//     var button = document.createElement("button");
-//     button.textContent = "Complete ✔️";
-//     choices.appendChild(button);
-//     var button = document.createElement("button");
-//     button.textContent = "Complete ✔️";
-//     choices.appendChild(button); 
-    
-    // choices.push(
-    // `<button id="btnA" class="button">Choice A</button>
-    // <button id="btnB" class="button">Choice B</button>
-    // <button id="btnC" class="button">Choice C</button>
-    // <button id="btnD" class="button">Choice D</button>`
-    
-
-    // )
-// });
 
 
 
 
 
+// Highscores
+var initialsInput = document.querySelector("#initials");
+var scoreInput = document.querySelector("#score");
+var signUpButton = document.querySelector("#submit");
+var msgDiv = document.querySelector("#msg");
+var userinitialsSpan = document.querySelector("#user-initials");
+var userscoreSpan = document.querySelector("#user-score");
 
+renderLastRegistered();
 
-// Selects buttons using their parent carousel element
-// var next = carousel.querySelector(".next");
-// var prev = carousel.querySelector(".prev");
-// let index = 0;
-// let currentImage;
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute("class", type);
+}
 
-// let questOne = "How much wood could a woodchuck chuck?"
+function renderLastRegistered() {
+  var initials = localStorage.getItem("initials");
+  var score = localStorage.getItem("score");
 
-// // let answersOne = 
+  if (!initials || !score) {
+    return;
+  }
 
-// let images = [
-//   "https://picsum.photos/300/200",
-//   "https://picsum.photos/300/201",
-//   "https://picsum.photos/300/202",
-//   "https://picsum.photos/300/203"
-// ];
+  userinitialsSpan.textContent = initials;
+  userscoreSpan.textContent = " - " + score;
+}
 
-// choices.addEventListener('click', addButtons);
+signUpButton.addEventListener("click", function(event) {
+  event.preventDefault();
 
+  var initials = document.querySelector("#initials").value;
 
+  if (initials === "") {
+    displayMessage("error", "initials cannot be blank");
+  } else {
+    displayMessage("success", "Congratulations");
 
-// // carousel.style.backgroundImage = "url('https://picsum.photos/300/200')";document.getElementById("theDiv").textContent = 'This is dynamically added text';
-
-// function navigate(direction) {
-//   index = index + direction;
-//   if (index < 0) { 
-//     index = images.length - 1; 
-//   } else if (index > images.length - 1) { 
-//     index = 0;
-//   }
-//   currentImage = images[index];
-//   carousel.style.backgroundImage = "url('" + currentImage + "')";
-// }
-
-// // Clicking on image opens a new window containing the image
-// carousel.addEventListener("click", function() {
-//   window.location.href = images[index];
-// });
-
-// // Clicking on next button displays next image in carousel
-// next.addEventListener("click", function(event) {
-//   // Stops event from bubbling up and new window opening
-//   event.stopPropagation();
-
-//   navigate(1);
-// });
-
-// // Clicking previous displays previous image in carousel
-// prev.addEventListener("click", function(event) {
-//   // Event bubbling would occur and a new window would open if we did not include the following line of code.
-//   event.stopPropagation();
-
-//   navigate(-1);
-// });
-
-// navigate(0);
+    localStorage.setItem("initials", initials);
+    localStorage.setItem("score", score);
+    renderLastRegistered();
+  }
+});
