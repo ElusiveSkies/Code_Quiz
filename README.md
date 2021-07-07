@@ -14,3 +14,7 @@ Added values for correct and incorrect answers
 Created a scoring system
 Made timer
 Created high scores area
+
+## Ending Quiz
+Added details for finishing quiz or timeout hiding slides/divs
+Added try again button
