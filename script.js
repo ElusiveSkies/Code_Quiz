@@ -116,7 +116,7 @@ var messageDiv = document.querySelector("#message");
 var userinitialsSpan = document.querySelector("#user-initials");
 var userscoreSpan = document.querySelector("#user-score");
 
-// renderLastRegistered();
+renderLastRegistered();
 
 function displayMessage(type, message) {
   messageDiv.textContent = message;
@@ -131,14 +131,12 @@ function renderLastRegistered() {
   }
 }
 
-var highScores = JSON.parse(localStorage.getItem("highScores"));
-if (highScores === null) {
-  var highScores = [];
-}
-
 submit.addEventListener("click", function (event) {
   event.preventDefault();
-
+  var highScores = JSON.parse(localStorage.getItem("highScores"));
+  if (highScores === null) {
+    highScores = [];
+  }
   var initials = document.querySelector("#initials").value;
   // prevents empty submittion
   if (initials === "") {
@@ -151,16 +149,24 @@ submit.addEventListener("click", function (event) {
   const newScore = { initials, score };
 
   highScores.push(newScore);
+  window.localStorage.setItem('highScores', JSON.stringify(highScores));
+
 })
 
 
 // Showing high scores
 function printRecords() {
-  for (var i = 0; i < highScores.length; i++) {
-    var records = document.createElement("li");
-    records.textContent = JSON.stringify(highScores[i]).replace("{", "").replace("}", "").replace(/"([^"]+)":/g, '$1:');
-    results.append(records);
-    console.log(highScores)
+  var highScores = localStorage.getItem('highScores');
+  if (highScores === null) {
+    highScores = [];
+  } else {
+    highScores = JSON.parse(highScores);
+    for (var i = 0; i < highScores.length; i++) {
+      var records = document.createElement("ol");
+      records.textContent = JSON.stringify(highScores[i]).replace('"', '').replace('{', "").replace("}", "").replace('":"', '  ').replace('","', '  ||  ').replace('":', ' - ');
+      results.append(records);
+      console.log(highScores);
+    }
   }
 }
 
