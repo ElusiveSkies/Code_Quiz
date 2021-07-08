@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,11 @@
     <link rel="stylesheet" href="style.css" />
     <title>Code Quiz</title>
 </head>
+
 <body>
-    <div class = "container">
-        <div class ="header"><h1>Javascript Code Quiz!</h1>
+    <div class="container">
+        <div class="header">
+            <h1>Javascript Code Quiz!</h1>
         </div>
         <main>
             <div class="quiz-container">
@@ -17,61 +20,62 @@
                     <button id="start" class="button">Start</button>
                 </div>
                 <div class="slides">
-                    <div class = "question"> Which one is prettiest?
+                    <div class="question">What tag is used in HTML to enclose Javascript?
                     </div>
-                    <button id="btnA" class="button correct">Choice A</button>
-                    <button id="btnB" class="button incorrect">Choice B</button>
-                    <button id="btnC" class="button incorrect">Choice C</button>
-                    <button id="btnD" class="button incorrect">Choice D</button>
+                    <button id="btnA" class="button correct">script</button>
+                    <button id="btnB" class="button incorrect">head</button>
+                    <button id="btnC" class="button incorrect">body</button>
+                    <button id="btnD" class="button incorrect">style</button>
                 </div>
                 <div class="slides">
-                    <div class = "question">Why am I struggling so much?
+                    <div class="question">JavaScript is interpreted by _________
                     </div>
-                    <button id="btnE" class="button incorrect">E</button>
-                    <button id="btnF" class="button incorrect">F</button>
-                    <button id="btnG" class="button correct">G</button>
-                    <button id="btnH" class="button incorrect">H</button>
+                    <button id="btnE" class="button incorrect">Server</button>
+                    <button id="btnF" class="button incorrect">Object</button>
+                    <button id="btnG" class="button correct">Client</button>
+                    <button id="btnH" class="button incorrect">None of the Above</button>
                 </div>
                 <div class="slides">
-                    <div class = "question">Is this over yet?
+                    <div class="question">What method of an Array object adds and/or removed elements from an array?
                     </div>
-                    <button id="btnI" class="button incorrect">I</button>
-                    <button id="btnJ" class="button incorrect">J</button>
-                    <button id="btnK" class="button correct">K</button>
-                    <button id="btnL" class="button incorrect">L</button>
+                    <button id="btnI" class="button incorrect">Shift</button>
+                    <button id="btnJ" class="button incorrect">Reverse</button>
+                    <button id="btnK" class="button correct">Splice</button>
+                    <button id="btnL" class="button incorrect">Slice</button>
                 </div>
                 <div class="slides" id="end">
                     <div>
                         <div class="data">
-                          <h1>High Scores</h1>
-                          <form method="highscore">
-                            <div class="input-group">
-                              <label for="initials">Initials</label>
-                              <input type="text" name="initials" id="initials" placeholder="Your Initials" />
-                            </div>
-                            <div id="message"></div>
-                            <button id="submit">Submit</button>
-                            <button id="playAgain">Try again?</button>
-                          </form>
+                            <h1>High Scores</h1>
+                            <form method="highscore">
+                                <div class="input-group">
+                                    <label for="initials">Initials</label>
+                                    <input type="text" name="initials" id="initials" placeholder="Your Initials" />
+                                </div>
+                                <div id="message"></div>
+                                <button id="submit">Submit</button>
+                                <button id="playAgain">Try again?</button>
+                            </form>
                         </div>
-                        <div class="records">
-                          <h2>High Scores:</h2>
-                          <strong></strong><span id="user-initials"></span>
-                          <strong></strong><span id="user-score"></span>
-                          <!-- <ol id="highScores">pan</ol> -->
+                        <div class="highScores">
+                            <h2>High Scores:</h2>
+                            <span id="user-initials"></span>
+                            <span id="user-score"></span>
+                            <span id="results"></span>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
-            <div class = "answer">
+            <div class="answer">
             </div>
-            <div class = "score"><span id = "counter">0</span> points
+            <div class="score"><span id="counter">0</span> points
             </div>
-            <div class = "timer">
+            <div class="timer">
             </div>
         </main>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>

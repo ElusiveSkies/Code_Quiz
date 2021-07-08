@@ -2,14 +2,11 @@ body {
     background-color:rgb(72, 134, 158);
     display: flex;
     color: white;
-}
-
-.container {
-    position: relative;
-    margin-left: 40%;
+    justify-content: center;
 }
 
 .header {
+    text-align: center;
     color: white;
     padding: 10px;
 }
