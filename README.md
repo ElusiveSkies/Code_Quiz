@@ -1,24 +1,32 @@
 # Code_Quiz
 Javascript Fundamentals Quiz
 
-## Created Files
-Created html, css, and js files
-Made and styled buttons
+[[Repository Link](https://github.com/ElusiveSkies/Code_Quiz)]
 
-## Added Initialization
-Created start button and onclick reaction
+[[Deployed Code Quiz](https://elusiveskies.github.io/Code_Quiz)]
 
-## Quiz Elements
-Added temperorary questions and answer buttons
-Added values for correct and incorrect answers
-Created a scoring system
-Made timer
-Created high scores area
+## Table of Contents
 
-## Ending Quiz
-Added details for finishing quiz or timeout hiding slides/divs
-Added try again button
+- [Description](#Description)
+- [Usage](#Usage)
+- [License](#License)
+- [Questions](#Questions)
 
-## High Score/Questions
-Added finalized questions
-Added high score section
+## Description
+A timed quiz, starting when the user clicks the start button.
+Created using HTML, CSS, and JavaScript.
+
+## Usage
+
+Video of Usage
+![Video of Usage](./img/quiz-active.gif)
+
+## License
+
+MIT
+
+## Questions
+
+[[Contact me](mailto:elusiveskies@gmail.com)]
+
+[[Elusiveskies](https://www.github.com/Elusiveskies)]
