@@ -8,6 +8,7 @@ Javascript Fundamentals Quiz
 ## Table of Contents
 
 - [Description](#Description)
+- [Technology](#Technology)
 - [Usage](#Usage)
 - [License](#License)
 - [Questions](#Questions)
@@ -16,6 +17,12 @@ Javascript Fundamentals Quiz
 A timed quiz, starting when the user clicks the start button.
 Created using HTML, CSS, and JavaScript.
 
+## Technology
+
+- HTML
+- CSS
+- JavaScript
+
 ## Usage
 
 Video of Usage
@@ -23,7 +30,7 @@ Video of Usage
 
 ## License
 
-MIT
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Questions
 
